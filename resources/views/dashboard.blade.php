@@ -70,13 +70,17 @@
                                 </div>
                             </div>
                         </div>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+
                         <li class="sidebar-item">
-                            <a href="index.html" class='sidebar-link'>
+                            <a href="#"
+                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                                class='sidebar-link'>
                                 <i class="bi bi-door-open"></i>
                                 <span>Logout</span>
                             </a>
-
-
                         </li>
 
                     </ul>
