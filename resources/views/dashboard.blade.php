@@ -43,7 +43,7 @@
                             <a href="{{ route('dashboard') }}" class='sidebar-link'>
                                 <i class="bi bi-grid-fill"></i>
                                 <span>Dashboard</span>
-                            </a >
+                            </a>
 
 
                         </li>
@@ -196,7 +196,8 @@
                                                 </td>
                                                 <td>Offenburg</td>
                                                 <td>
-                                                    <a href="#" class="btn btn-success">Detail</a>
+                                                    <a href="{{ route('recommendation') }}"
+                                                        class="btn btn-success">Detail</a>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -214,7 +215,8 @@
                                                 </td>
                                                 <td>New Quay</td>
                                                 <td>
-                                                    <a href="#" class="btn btn-success">Detail</a>
+                                                    <a href="{{ route('recommendation') }}"
+                                                        class="btn btn-success">Detail</a>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -231,7 +233,8 @@
                                                 </td>
                                                 <td>Grumo Appula</td>
                                                 <td>
-                                                    <a href="#" class="btn btn-success">Detail</a>
+                                                    <a href="{{ route('recommendation') }}"
+                                                        class="btn btn-success">Detail</a>
                                                 </td>
                                             </tr>
                                             <!-- Add more rows as needed -->
