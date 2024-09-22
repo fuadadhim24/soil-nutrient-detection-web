@@ -55,7 +55,8 @@
                                             <h6 class="text-white fw-normal mb-0">Dihimbau, memantau aktivitas sawah
                                                 anda secara berkala!</h6>
                                             <button type="button" class="btn btn-light-secondary mt-1"
-                                                style="font-size: 0.75rem !important;">
+                                                style="font-size: 0.75rem !important;" data-bs-toggle="modal"
+                                                data-bs-target="#inlineForm">
                                                 Tambah Sawah
                                             </button>
                                         </div>
@@ -89,6 +90,46 @@
             </div>
         </div>
         <div id="main">
+            <div class="modal fade text-left" id="inlineForm" tabindex="-1" role="dialog"
+                aria-labelledby="myModalLabel33" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="myModalLabel33">Tambah Sawah </h4>
+                            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                <i data-feather="x"></i>
+                            </button>
+                        </div>
+                        <form action="#">
+                            <div class="modal-body">
+                                <label for="email">Nama Titik Sawah: </label>
+                                <div class="form-group">
+                                    <input id="nama" type="text" placeholder="Sawah .." class="form-control">
+                                </div>
+                                <label for="email">Luas: </label>
+                                <div class="form-group">
+                                    <input id="luas" type="text" placeholder="satuan: m2 x m2"
+                                        class="form-control">
+                                </div>
+                                <label>Pilih Lokasi Sawah: </label>
+                                <div id="mapMarker" style="height: 300px;"></div>
+
+                                <input type="hidden" id="selectedLocation">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-light-secondary" data-bs-dismiss="modal">
+                                    <i class="bx bx-x d-block d-sm-none"></i>
+                                    <span class="d-none d-sm-block">Batal</span>
+                                </button>
+                                <button type="button" class="btn btn-success ms-1" data-bs-dismiss="modal">
+                                    <i class="bx bx-check d-block d-sm-none"></i>
+                                    <span class="d-none d-sm-block">Simpan</span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
             <header class="mb-3">
                 <a href="#" class="burger-btn d-block d-xl-none">
                     <i class="bi bi-justify fs-3"></i>
@@ -268,7 +309,7 @@
                                                 <img src="{{ asset('assets/admin/beras.png') }}" alt="Image"
                                                     style="width: 30px; height: 30px;">
                                             </div>
-                                            <h6 class="mt-2" style="color: black">1</h6>
+                                            <h6 class="mt-2" style="color: black; font-weight: 500">Padi</h6>
                                         </div>
                                         <div class="col-auto text-center">
                                             <div
@@ -276,7 +317,7 @@
                                                 <img src="{{ asset('assets/admin/jagung.png') }}" alt="Image"
                                                     style="width: 30px; height: 30px;">
                                             </div>
-                                            <h6 class="mt-2" style="color: black">2</h6>
+                                            <h6 class="mt-2" style="color: black; font-weight: 500">Jagung</h6>
                                         </div>
                                         <div class="col-auto text-center">
                                             <div
@@ -284,7 +325,7 @@
                                                 <img src="{{ asset('assets/admin/tebu.png') }}" alt="Image"
                                                     style="width: 30px; height: 30px;">
                                             </div>
-                                            <h6 class="mt-2" style="color: black">3</h6>
+                                            <h6 class="mt-2" style="color: black; font-weight: 500">Tebu</h6>
                                         </div>
                                     </div>
 
@@ -397,6 +438,34 @@
 
         <script src=" {{ asset('extensions/apexcharts/apexcharts.min.js') }}""></script>
         <script src=" {{ asset('js/ui-apexchart.js') }}"></script>
+
+        <script>
+            function initMap() {
+                var defaultLocation = {
+                    lat: -6.1751,
+                    lng: 106.8650
+                };
+
+                var map = new google.maps.Map(document.getElementById('mapMarker'), {
+                    zoom: 10,
+                    center: defaultLocation,
+                });
+
+                var marker = new google.maps.Marker({
+                    position: defaultLocation,
+                    map: map,
+                    title: 'Lokasi Sawah',
+                    draggable: true,
+                });
+                console.log('berhasil');
+
+                google.maps.event.addListener(marker, 'dragend', function(event) {
+                    document.getElementById('selectedLocation').value = event.latLng.lat() + ',' + event.latLng.lng();
+                });
+            }
+        </script>
+        <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxy6TJLGYD0ktdkEf3BiHOG9KkjLqdNC8&callback=initMap"></script>
 
 </body>
 
