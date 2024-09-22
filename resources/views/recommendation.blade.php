@@ -321,47 +321,26 @@
                 </div>
                 <div class="page-content">
                     <section class="row">
-                        <div class="col-12 col-lg-6">
+                        <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h5>Grafik Suhu</h5>
+                                    <h5>Grafik Suhu dan Kelembaban</h5>
                                 </div>
                                 <div class="card-body">
-                                    <div class="googlemaps">
-                                        <iframe
-                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126748.6091242787!2d107.57311654129782!3d-6.903273917028756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e6398252477f%3A0x146a1f93d3e815b2!2sBandung%2C%20Bandung%20City%2C%20West%20Java!5e0!3m2!1sen!2sid!4v1633023222539!5m2!1sen!2sid"
-                                            width="100%" height="180" style="border:0;" allowfullscreen=""
-                                            loading="lazy"></iframe>
-                                    </div>
+                                    <div id="lineChart"></div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-lg-6">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h5>Grafik Kelembaban</h5>
-                                </div>
-                                <div class="card-body">
-                                    <div class="googlemaps">
-                                        <iframe
-                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126748.6091242787!2d107.57311654129782!3d-6.903273917028756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e6398252477f%3A0x146a1f93d3e815b2!2sBandung%2C%20Bandung%20City%2C%20West%20Java!5e0!3m2!1sen!2sid!4v1633023222539!5m2!1sen!2sid"
-                                            width="100%" height="180" style="border:0;" allowfullscreen=""
-                                            loading="lazy"></iframe>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+
                         <div class="col-12 col-lg-6">
                             <div class="card">
                                 <div class="card-header">
                                     <h5>Grafik Nitrogen</h5>
                                 </div>
                                 <div class="card-body">
-                                    <div class="googlemaps">
-                                        <iframe
-                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126748.6091242787!2d107.57311654129782!3d-6.903273917028756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e6398252477f%3A0x146a1f93d3e815b2!2sBandung%2C%20Bandung%20City%2C%20West%20Java!5e0!3m2!1sen!2sid!4v1633023222539!5m2!1sen!2sid"
-                                            width="100%" height="180" style="border:0;" allowfullscreen=""
-                                            loading="lazy"></iframe>
+                                    <div id="radialGradientNitrogen"></div>
+                                    <div class="d-block text-center m-0">
+                                        <h5 class="text-muted">mg/kg</h5>
                                     </div>
                                 </div>
                             </div>
@@ -372,11 +351,10 @@
                                     <h5>Grafik Fosfor</h5>
                                 </div>
                                 <div class="card-body">
-                                    <div class="googlemaps">
-                                        <iframe
-                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126748.6091242787!2d107.57311654129782!3d-6.903273917028756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e6398252477f%3A0x146a1f93d3e815b2!2sBandung%2C%20Bandung%20City%2C%20West%20Java!5e0!3m2!1sen!2sid!4v1633023222539!5m2!1sen!2sid"
-                                            width="100%" height="180" style="border:0;" allowfullscreen=""
-                                            loading="lazy"></iframe>
+                                    <div id="radialGradientFosfor">
+                                    </div>
+                                    <div class="d-block text-center m-0">
+                                        <h5 class="text-muted">mg/kg</h5>
                                     </div>
                                 </div>
                             </div>
@@ -387,11 +365,9 @@
                                     <h5>Grafik Kalium</h5>
                                 </div>
                                 <div class="card-body">
-                                    <div class="googlemaps">
-                                        <iframe
-                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126748.6091242787!2d107.57311654129782!3d-6.903273917028756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e6398252477f%3A0x146a1f93d3e815b2!2sBandung%2C%20Bandung%20City%2C%20West%20Java!5e0!3m2!1sen!2sid!4v1633023222539!5m2!1sen!2sid"
-                                            width="100%" height="180" style="border:0;" allowfullscreen=""
-                                            loading="lazy"></iframe>
+                                    <div id="radialGradientKalium"></div>
+                                    <div class="d-block text-center m-0">
+                                        <h5 class="text-muted">mg/kg</h5>
                                     </div>
                                 </div>
                             </div>
@@ -417,6 +393,10 @@
 
 
         <script src="{{ asset('js/app.js') }}"></script>
+
+
+        <script src=" {{ asset('extensions/apexcharts/apexcharts.min.js') }}""></script>
+        <script src=" {{ asset('js/ui-apexchart.js') }}"></script>
 
 </body>
 

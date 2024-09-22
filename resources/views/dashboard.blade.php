@@ -254,7 +254,7 @@
                                         </div>
                                         <div class="col-12 col-lg-5">
                                             <div class="ms-3 name">
-                                                <h2 class="font-bold">75</h2>
+                                                <h2 class="font-bold">3</h2>
                                                 <h6 class="text-muted mb-0">Total Sawah</h6>
                                             </div>
                                         </div>
