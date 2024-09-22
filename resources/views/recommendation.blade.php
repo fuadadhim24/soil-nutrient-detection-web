@@ -144,11 +144,12 @@
                             <p class="text-subtitle text-muted">Sawah A</p>
                         </div>
                         <div class="col-12 col-md-3 order-md-2 order-first">
-                            <div class="card">
+                            <a href="{{ route('dashboard') }}" class="card text-decoration-none">
+                                <!-- Link ke route dashboard -->
                                 <div class="card-body py-3 px-4">
                                     <div class="d-flex align-items-center">
                                         <div
-                                            class="col-md-4 col-lg-12 col-xl-12 col-xxl-3 d-flex justify-content-start ">
+                                            class="col-md-4 col-lg-12 col-xl-12 col-xxl-3 d-flex justify-content-start">
                                             <div class="stats-icon red mb-2">
                                                 <i class="iconly-boldArrow---Left-2"></i>
                                             </div>
@@ -158,8 +159,9 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
+
                         <div class="col-12 col-md-3 order-md-3 order-first">
                             <div class="card">
                                 <div class="card-body py-3 px-4">
