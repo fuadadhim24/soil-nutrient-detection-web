@@ -90,6 +90,88 @@
             </div>
         </div>
         <div id="main">
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable"
+                    role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalCenterTitle">Tambah Tanaman
+                            </h5>
+                            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                <i data-feather="x"></i>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <label for="email">Pilih Tanaman: </label>
+                            <fieldset class="form-group">
+                                <select class="form-select" id="basicSelect">
+                                    <option>Padi</option>
+                                    <option>Jagung</option>
+                                    <option>Tebu</option>
+                                </select>
+                            </fieldset>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light-secondary" data-bs-dismiss="modal">
+                                <i class="bx bx-x d-block d-sm-none"></i>
+                                <span class="d-none d-sm-block">Batal</span>
+                            </button>
+                            <button type="button" class="btn btn-success ms-1" data-bs-dismiss="modal">
+                                <i class="bx bx-check d-block d-sm-none"></i>
+                                <span class="d-none d-sm-block">Simpan</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Basic Modal -->
+            <div class="modal fade text-left" id="default" tabindex="-1" role="dialog"
+                aria-labelledby="myModalLabel1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="myModalLabel1">Edit Sawah</h5>
+                            <button type="button" class="close rounded-pill" data-bs-dismiss="modal"
+                                aria-label="Close">
+                                <i data-feather="x"></i>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <label for="email">Nama: </label>
+                            <div class="form-group">
+                                <input id="luas" type="text" placeholder="Sawah C" class="form-control">
+                            </div>
+                            <label for="email">Detail Lokasi: </label>
+                            <div class="form-group">
+                                <input id="luas" type="text"
+                                    placeholder="Jl. Pahlawan, kec. Kemlagi, kab. Surabaya" class="form-control">
+                            </div>
+                            <label for="email">Tahap Fase: </label>
+                            <div class="form-group">
+                                <input id="luas" type="text" placeholder="Pemupukan" class="form-control">
+                            </div>
+                            <label for="email">Visibilitas: </label>
+                            <fieldset class="form-group">
+                                <select class="form-select" id="basicSelect">
+                                    <option>Tampilkan</option>
+                                    <option>Sembunyikan</option>
+                                </select>
+                            </fieldset>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn" data-bs-dismiss="modal">
+                                <i class="bx bx-x d-block d-sm-none"></i>
+                                <span class="d-none d-sm-block">Batal</span>
+                            </button>
+                            <button type="button" class="btn btn-success ms-1" data-bs-dismiss="modal">
+                                <i class="bx bx-check d-block d-sm-none"></i>
+                                <span class="d-none d-sm-block">Simpan</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="modal fade text-left" id="inlineForm" tabindex="-1" role="dialog"
                 aria-labelledby="myModalLabel33" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
@@ -104,7 +186,8 @@
                             <div class="modal-body">
                                 <label for="email">Nama Titik Sawah: </label>
                                 <div class="form-group">
-                                    <input id="nama" type="text" placeholder="Sawah .." class="form-control">
+                                    <input id="nama" type="text" placeholder="Sawah .."
+                                        class="form-control">
                                 </div>
                                 <label for="email">Luas: </label>
                                 <div class="form-group">
@@ -194,7 +277,8 @@
                                             <h5 class="card-title mb-0">Informasi Sawah</h5>
                                         </div>
                                         <div class="col text-end">
-                                            <a href="#" class="btn btn-outline-warning">Edit</a>
+                                            <a href="#" type="button" class="btn btn-outline-warning"
+                                                data-bs-toggle="modal" data-bs-target="#default">Edit</a>
                                         </div>
                                     </div>
                                 </div>
@@ -300,7 +384,8 @@
                             <div class="card">
                                 <div class="card-header d-flex justify-content-between align-items-center">
                                     <h5 class="card-title mb-0">Tanaman Terdaftar</h5>
-                                    <a href="#" class="btn btn-outline-success">Tambah</a>
+                                    <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"
+                                        type="button" class="btn btn-outline-success">Tambah</a>
                                 </div>
 
                                 <div class="card-body">
